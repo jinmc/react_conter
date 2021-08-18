@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react';
-
+import Control from './Control';
+import Value from './Value'
 
 const defaultProps = {
 
@@ -12,7 +13,10 @@ class App extends Component {
 
     render() {
         return (
-        <div>App</div>
+        <div>
+            <Value />
+            <Control />
+        </div>
         );
     }
 
