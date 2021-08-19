@@ -16,8 +16,7 @@ export default function counter(state = initialState, action) {
             return {
                 ...state, 
                 number : state.number - 1}
-
-        case types.SET_COLOR:
+        default:
             return state;
         
     }
