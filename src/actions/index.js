@@ -2,7 +2,7 @@ import * as types from './ActionTypes';
 
 export function increment() {
     return {
-        types: types.INCREMENT
+        type: types.INCREMENT
     }
 }
 
