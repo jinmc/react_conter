@@ -11,16 +11,33 @@ const defaultProps = {
 
 class App extends Component {
     constructor(props) {
-        super(props)
+        super(props);
+        this.setRandomColor = this.setRandomColor.bind(this);
+    }
+
+    setRandomColor() {
+        const color = [
+            Math.floor((Math.random() * 55) + 200),
+            Math.floor((Math.random() * 55) + 200),
+            Math.floor((Math.random() * 55) + 200)
+        ];
+
+         this.props.handleSetColor(color);
     }
 
     render() {
+        const color = this.props.color;
+        const style = {
+            background: `rgb(${color[0]}, ${color[1]}, ${color[2]})`
+        };
+
         return (
-        <div>
+        <div style={style}>
             <Value number={this.props.number}/>
             <Control
                 onPlus={this.props.handleIncrement}
                 onSubtract={this.props.handleDecrement}
+                onRandomizeColor={this.setRandomColor}
              />
         </div>
         );
